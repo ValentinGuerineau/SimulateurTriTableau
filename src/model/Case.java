@@ -7,6 +7,8 @@ import model.deplacement.*;
 
 public class Case {
 	
+	public final static int TAILLE_CASE = 100;
+	
 	private int xIni;
 	private int yIni;
 	private int valeurIni;
@@ -94,6 +96,23 @@ public class Case {
 		dureeDeplacement += duree;
 	}
 	
+	
+	public void ajouterDeplacementStable(int duree,int valeur , Color couleur) {
+		int nbDeplacement = lesDeplacements.size();
+		int xDebut = xIni;
+		int yDebut = yIni;
+		int tDebut = dureeDeplacement+1;
+
+		if(nbDeplacement > 0) {
+			Deplacement dernier = lesDeplacements.get(nbDeplacement-1);
+			xDebut = dernier.getXFinal();
+			yDebut =  dernier.getYFinal();
+		}
+		
+		lesDeplacements.add( new Stable(xDebut,yDebut,tDebut,duree,valeur ,couleur));
+		dureeDeplacement += duree;
+	}
+	
 	public void trouverDeplacementActu(int t) {
 		int nbDeplacement = lesDeplacements.size() ;
 		if(nbDeplacement > 0) {
@@ -140,6 +159,22 @@ public class Case {
 		}
 		
 		return lesDeplacements.get(deplacementActu).getValeur();
+	}
+	
+	
+	public int getXFinal() {
+		return getX(dureeDeplacement);
+	}
+	public int getYFinal() {
+		return getY(dureeDeplacement);
+	}
+	public int getValeurFinal() {
+		return getValeur(dureeDeplacement);
+	}
+	
+	
+	public int getDureeDeplacement() {
+		return dureeDeplacement;
 	}
 	
 	public String toString() {
