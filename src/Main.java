@@ -2,28 +2,33 @@ import java.awt.Color;
 
 import model.Case;
 import model.LesCases;
+import vue.FenetrePrincipal;
 
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		LesCases lesCases = new LesCases();
+		/*LesCases lesCases = new LesCases();
+		lesCases.addCases(5);
+		lesCases.addCases(10);
+		lesCases.addCases(15);
 		
-		Case c1 = new Case(10, 10, 5);
-		c1.ajouterDeplacementBas(3, 5, Color.black);
-		c1.ajouterDeplacementDroite(10, 5, Color.black);
-		c1.ajouterDeplacementStable(10, 5, Color.black);
+		lesCases.ajouterDeplacementBas(0,3, 5, Color.black);
+		lesCases.ajouterDeplacementDroite(0,10, 5, Color.black);
+		lesCases.ajouterDeplacementStable(0,10, 5, Color.black);
+
 		
-		Case c2 = new Case(10, 10, 5);
-		c1.ajouterDeplacementBas(3, 5, Color.black);
-		c1.ajouterDeplacementDroite(10, 5, Color.black);
+		lesCases.ajouterDeplacementBas(1,3, 5, Color.black);
+		lesCases.ajouterDeplacementDroite(1,10, 5, Color.black);
 		
 		
-		lesCases.addCases(c1);
-		lesCases.addCases(c2);
+
 		
-		System.out.print(lesCases);
+		System.out.print(lesCases);*/
+		
+		
+		FenetrePrincipal f = new FenetrePrincipal();
 	}
 
 }

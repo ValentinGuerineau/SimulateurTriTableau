@@ -30,89 +30,119 @@ public class Case {
 		deplacementActu = -1;
 	}
 	
-	//(int xDebut, int yDebut, int tDebut, int tFin, int valeur, Color couleur)
+	public void miseAZero() {
+		dureeDeplacement = 0;
+		deplacementActu = -1;
+		lesDeplacements.removeAll(lesDeplacements);
+	}
 	public void ajouterDeplacementHaut(int duree,int valeur , Color couleur) {
-		int nbDeplacement = lesDeplacements.size();
-		int xDebut = xIni;
-		int yDebut = yIni;
-		int tDebut = dureeDeplacement+1;
-
-		if(nbDeplacement > 0) {
-			Deplacement dernier = lesDeplacements.get(nbDeplacement-1);
-			xDebut = dernier.getXFinal();
-			yDebut =  dernier.getYFinal();
+		if(duree > 0) {
+			int nbDeplacement = lesDeplacements.size();
+			int xDebut = xIni;
+			int yDebut = yIni;
+			int tDebut = dureeDeplacement+1;
+	
+			if(nbDeplacement > 0) {
+				Deplacement dernier = lesDeplacements.get(nbDeplacement-1);
+				xDebut = dernier.getXFinal();
+				yDebut =  dernier.getYFinal();
+			}
+			
+			lesDeplacements.add( new Haut(xDebut,yDebut,tDebut,duree,valeur ,couleur));
+			dureeDeplacement += duree;
 		}
-		
-		lesDeplacements.add( new Haut(xDebut,yDebut,tDebut,duree,valeur ,couleur));
-		dureeDeplacement += duree;
 	}
 	
 	public void ajouterDeplacementBas(int duree,int valeur , Color couleur) {
-		int nbDeplacement = lesDeplacements.size();
-		int xDebut = xIni;
-		int yDebut = yIni;
-		int tDebut = dureeDeplacement+1;
-
-		if(nbDeplacement > 0) {
-			Deplacement dernier = lesDeplacements.get(nbDeplacement-1);
-			xDebut = dernier.getXFinal();
-			yDebut =  dernier.getYFinal();
+		if(duree > 0) {
+			int nbDeplacement = lesDeplacements.size();
+			int xDebut = xIni;
+			int yDebut = yIni;
+			int tDebut = dureeDeplacement+1;
+	
+			if(nbDeplacement > 0) {
+				Deplacement dernier = lesDeplacements.get(nbDeplacement-1);
+				xDebut = dernier.getXFinal();
+				yDebut =  dernier.getYFinal();
+			}
+			
+			lesDeplacements.add( new Bas(xDebut,yDebut,tDebut,duree,valeur ,couleur));
+			dureeDeplacement += duree;
 		}
-		
-		lesDeplacements.add( new Bas(xDebut,yDebut,tDebut,duree,valeur ,couleur));
-		dureeDeplacement += duree;
 	}
 	
 	
 	public void ajouterDeplacementDroite(int duree,int valeur , Color couleur) {
-		int nbDeplacement = lesDeplacements.size();
-		int xDebut = xIni;
-		int yDebut = yIni;
-		int tDebut = dureeDeplacement+1;
-
-		if(nbDeplacement > 0) {
-			Deplacement dernier = lesDeplacements.get(nbDeplacement-1);
-			xDebut = dernier.getXFinal();
-			yDebut =  dernier.getYFinal();
+		if(duree > 0) {
+			int nbDeplacement = lesDeplacements.size();
+			int xDebut = xIni;
+			int yDebut = yIni;
+			int tDebut = dureeDeplacement+1;
+	
+			if(nbDeplacement > 0) {
+				Deplacement dernier = lesDeplacements.get(nbDeplacement-1);
+				xDebut = dernier.getXFinal();
+				yDebut =  dernier.getYFinal();
+			}
+			
+			lesDeplacements.add( new Droite(xDebut,yDebut,tDebut,duree,valeur ,couleur));
+			dureeDeplacement += duree;
 		}
-		
-		lesDeplacements.add( new Droite(xDebut,yDebut,tDebut,duree,valeur ,couleur));
-		dureeDeplacement += duree;
 	}
 	
 	public void ajouterDeplacementGauche(int duree,int valeur , Color couleur) {
-		int nbDeplacement = lesDeplacements.size();
-		int xDebut = xIni;
-		int yDebut = yIni;
-		int tDebut = dureeDeplacement+1;
-
-		if(nbDeplacement > 0) {
-			Deplacement dernier = lesDeplacements.get(nbDeplacement-1);
-			xDebut = dernier.getXFinal();
-			yDebut =  dernier.getYFinal();
+		if(duree > 0) {
+			int nbDeplacement = lesDeplacements.size();
+			int xDebut = xIni;
+			int yDebut = yIni;
+			int tDebut = dureeDeplacement+1;
+	
+			if(nbDeplacement > 0) {
+				Deplacement dernier = lesDeplacements.get(nbDeplacement-1);
+				xDebut = dernier.getXFinal();
+				yDebut =  dernier.getYFinal();
+			}
+			
+			lesDeplacements.add( new Gauche(xDebut,yDebut,tDebut,duree,valeur ,couleur));
+			dureeDeplacement += duree;
 		}
-		
-		lesDeplacements.add( new Gauche(xDebut,yDebut,tDebut,duree,valeur ,couleur));
-		dureeDeplacement += duree;
 	}
 	
 	
 	public void ajouterDeplacementStable(int duree,int valeur , Color couleur) {
-		int nbDeplacement = lesDeplacements.size();
-		int xDebut = xIni;
-		int yDebut = yIni;
-		int tDebut = dureeDeplacement+1;
-
-		if(nbDeplacement > 0) {
-			Deplacement dernier = lesDeplacements.get(nbDeplacement-1);
-			xDebut = dernier.getXFinal();
-			yDebut =  dernier.getYFinal();
-		}
-		
-		lesDeplacements.add( new Stable(xDebut,yDebut,tDebut,duree,valeur ,couleur));
-		dureeDeplacement += duree;
-	}
+		if(duree > 0) {
+			int nbDeplacement = lesDeplacements.size();
+			int xDebut = xIni;
+			int yDebut = yIni;
+			int tDebut = dureeDeplacement+1;
 	
+			if(nbDeplacement > 0) {
+				Deplacement dernier = lesDeplacements.get(nbDeplacement-1);
+				xDebut = dernier.getXFinal();
+				yDebut =  dernier.getYFinal();
+			}
+			
+			lesDeplacements.add( new Stable(xDebut,yDebut,tDebut,duree,valeur ,couleur));
+			dureeDeplacement += duree;
+		}
+	}
+		
+	public int getXIni() {
+		return xIni;
+	}
+
+	public int getYIni() {
+		return yIni;
+	}
+
+	public int getValeurIni() {
+		return valeurIni;
+	}
+
+	public void setValeurIni(int valeurIni) {
+		this.valeurIni = valeurIni;
+	}
+
 	public void trouverDeplacementActu(int t) {
 		int nbDeplacement = lesDeplacements.size() ;
 		if(nbDeplacement > 0) {
@@ -129,6 +159,11 @@ public class Case {
 		}else {
 			deplacementActu = -1;
 		}
+	}
+	
+	public boolean estTempsMouvementStable(int t) {
+		trouverDeplacementActu(t);
+		return lesDeplacements.get(deplacementActu).estStable();
 	}
 	
 	public int getX(int t) {

@@ -51,6 +51,10 @@ public abstract class Deplacement {
 		return tFin;
 	}
 	
+	public boolean estStable() {
+		return false;
+	}
+	
 	public abstract int getX(int t);
 	public abstract int getY(int t);
 	

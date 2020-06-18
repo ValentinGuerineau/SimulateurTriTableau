@@ -3,20 +3,44 @@ package model;
 import java.awt.Color;
 import java.util.ArrayList;
 
+import model.deplacement.Bas;
+import model.deplacement.Deplacement;
+import model.deplacement.Droite;
+import model.deplacement.Gauche;
+import model.deplacement.Haut;
+import model.deplacement.Stable;
+
 public class LesCases {
 	
+	
+	/*** Par convention on mettre toujour la Variable plus a gauche que les cases ***/
+	public final static int X_DEBUT = 200;
+	public final static int Y_DEBUT = 100;
+	
 	public final static int ESPACE_ENTRE_CASE = 10;
+	private final static int X_VARIABLE = 50;
+	private final static int Y_VARIABLE = 300;
 	
 	private ArrayList<Case> lesCases;
+	private Case variable;
 	
 	public LesCases() {
 		lesCases = new ArrayList<Case>();
+		variable = new Case(X_VARIABLE,Y_VARIABLE,0);
 	}
 	
-	/*** a ameliore **/
-	public void addCases(Case c) {
-		lesCases.add(c);
+
+	public void addCases(int valeur) {
+		int xDebut = X_DEBUT;
+		int yDebut = Y_DEBUT;
+		
+		if(lesCases.size() > 0) {
+			xDebut = X_DEBUT + (lesCases.size()  ) * (Case.TAILLE_CASE + ESPACE_ENTRE_CASE);
+		}
+		
+		lesCases.add(new Case(xDebut,yDebut,valeur));
 	}
+	
 	
 	public int getMaxTemps() {
 		int tM = 0;
@@ -40,6 +64,10 @@ public class LesCases {
 	
 	public Case getCase(int i) {
 		return lesCases.get(i);
+	}
+	
+	public Case getVariable() {
+		return variable;
 	}
 	
 	
@@ -74,6 +102,35 @@ public class LesCases {
 			
 			caseActu.ajouterDeplacementStable(tempsMax-tempsMaxActu,caseActu.getValeurFinal(),Color.black);
 			
+		}
+	}
+	
+	
+	public void ajouterDeplacementHaut(int indice,int duree,int valeur , Color couleur) {
+		lesCases.get(indice).ajouterDeplacementHaut( duree, valeur ,  couleur);
+	}
+	
+	public void ajouterDeplacementBas(int indice,int duree,int valeur , Color couleur) {
+		lesCases.get(indice).ajouterDeplacementBas( duree, valeur ,  couleur);
+	}
+	
+	
+	public void ajouterDeplacementDroite(int indice,int duree,int valeur , Color couleur) {
+		lesCases.get(indice).ajouterDeplacementDroite( duree, valeur ,  couleur);
+	}
+	
+	public void ajouterDeplacementGauche(int indice,int duree,int valeur , Color couleur) {
+		lesCases.get(indice).ajouterDeplacementGauche( duree, valeur ,  couleur);
+	}
+	
+	
+	public void ajouterDeplacementStable(int indice,int duree,int valeur , Color couleur) {
+		lesCases.get(indice).ajouterDeplacementStable( duree, valeur ,  couleur);
+	}
+	
+	public void miseAZero() {
+		for(int i = 0 ; i < lesCases.size(); i++) {
+			lesCases.get(i).miseAZero();
 		}
 	}
 

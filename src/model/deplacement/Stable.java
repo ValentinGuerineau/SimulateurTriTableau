@@ -21,4 +21,7 @@ public class Stable extends Deplacement{
 		return yDebutMouv;
 	}
 
+	public boolean estStable() {
+		return true;
+	}
 }
